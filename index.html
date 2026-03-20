@@ -3,184 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bailey Huang ✨ | Home</title>
+    <title>Bailey Huang | Personal Space</title>
     <style>
-        /* 1. 基础样式定义 - 这里决定了整体的“萌系”基调 */
         :root {
-            --bg-color: #fdfaf5; /* 奶油白背景 */
-            --text-color: #7a6a96; /* 柔和紫文字（不那么刺眼） */
-            --accent-color: #ffb7c3; /* 马卡龙粉，用于强调 */
-            --card-bg: #fffefe; /* 纯白卡片 */
-            --border-color: #ffdadf; /* 极淡的粉色边框 */
-            --link-color: #b7a9f1; /* 柔和的紫罗兰链接 */
+            --bg-color: #faf9f6; /* 更显高级的米白色 */
+            --text-color: #4a455a; /* 深灰紫色，更有阅读质感 */
+            --accent-color: #ffcad4; /* 降低饱和度的干枯玫瑰粉 */
+            --card-bg: #ffffff;
+            --border-color: #eee0e2; /* 极其纤细的边框色 */
+            --link-color: #9d8df1; /* 稍深一点的薰衣草紫 */
         }
 
         body {
-            font-family: "SF Pro SC", "HanHei SC", SF Pro Text, Myriad Set Pro, system-ui, -apple-system, sans-serif;
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            padding: 40px 0;
             min-height: 100vh;
-            line-height: 1.8;
-            letter-spacing: 0.02em;
+            line-height: 1.7;
         }
 
-        a { text-decoration: none; color: var(--link-color); transition: all 0.2s; position: relative; }
+        /* 鼠标悬停爱心特效保留 */
+        a { text-decoration: none; color: var(--link-color); transition: all 0.3s ease; position: relative; font-weight: 500; }
         a:hover { color: var(--accent-color); }
-        a:after { content: ' ♡'; font-size: 0.8em; opacity: 0; transition: 0.2s; }
+        a:after { content: ' ♡'; font-size: 0.9em; opacity: 0; transition: 0.3s; }
         a:hover:after { opacity: 1; }
 
-        /* 2. 主容器 */
         .container {
             width: 90%;
-            max-width: 800px;
-            padding: 50px 40px;
+            max-width: 750px;
+            padding: 60px 50px;
             background-color: var(--card-bg);
-            border-radius: 20px;
-            border: 2px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(255,183,195,0.15); /* 淡淡的粉色投影 */
-            /* 添加一个精美的淡入动画 */
-            animation: fadeIn 1s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* 增加一个可爱的背景圆点图案 */
-        .container:before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.3;
-            z-index: 0;
+            border-radius: 12px; /* 减小圆角，显得更干练 */
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03); /* 极轻的投影 */
+            animation: fadeIn 0.8s ease-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 3. 头部区域 */
         header {
-            text-align: center;
-            border-bottom: 2px dashed var(--border-color); /* 虚线更可爱 */
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
+            text-align: left; /* 改为左对齐，更符合简历布局 */
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
         }
 
-        /* 你的头像 - 使用你 GitHub 的真实头像 */
         .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 0 0 5px var(--accent-color); /* 双层边框效果 */
+            width: 100px;
+            height: 100px;
+            border-radius: 15px; /* 改为圆角矩形，更具现代感 */
+            border: 1px solid var(--border-color);
+            object-fit: cover;
+        }
+
+        .header-text h1 { margin: 0; font-size: 2em; letter-spacing: 1px; color: #2d2a3a; }
+        .subtitle { color: var(--accent-color); font-size: 1em; font-weight: 600; text-transform: uppercase; margin-top: 4px; }
+
+        section { margin-bottom: 45px; }
+        h2 { 
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            color: #2d2a3a;
             margin-bottom: 20px;
         }
-
-        h1 { margin: 0; font-size: 2.2em; color: var(--text-color); }
-        .subtitle { color: var(--accent-color); font-size: 1.1em; font-weight: 500; margin-top: 5px; }
-
-        /* 4. 内容区域 */
-        section { margin-bottom: 40px; position: relative; z-index: 1; }
-        h2 { 
-            display: inline-block;
-            border-bottom: 3px solid var(--accent-color); 
-            padding: 0 5px 2px 5px; 
-            color: var(--text-color); 
-            margin-bottom: 20px; 
-            border-radius: 3px;
+        h2::after { /* 装饰性横线 */
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 15px;
         }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+        .edu-name { font-weight: 600; color: var(--text-color); }
+        .edu-date { font-size: 0.9em; color: #999; }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
         .project-card {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 15px;
-            border: 2px solid var(--border-color);
-            transition: all 0.3s ease;
-            cursor: pointer;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: #fafafa;
+            transition: all 0.3s;
         }
 
         .project-card:hover {
-            border-color: var(--link-color);
-            background-color: #f6f3ff; /* 淡淡的紫色背景 */
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(183,169,241,0.2);
+            background: #fff;
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .project-card h3 { margin-top: 0; color: var(--text-color); font-size: 1.3em; }
-        .project-card p { font-size: 0.95em; margin-bottom: 0; }
+        .project-card h3 { margin: 0 0 10px 0; font-size: 1.1em; color: var(--text-color); }
+        .project-card p { font-size: 0.85em; margin: 0; color: #777; }
 
-        /* 特殊的项目图标占位 */
-        .project-card:before {
-            content: '☁️'; /* 默认图标 */
-            font-size: 1.5em;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* 5. 底部链接 */
         footer {
             text-align: center;
-            font-size: 0.9em;
-            color: #b0a6c0;
-            margin-top: 60px;
-            border-top: 2px dashed var(--border-color);
+            font-size: 0.85em;
+            color: #bbb;
+            margin-top: 50px;
             padding-top: 20px;
-            position: relative;
-            z-index: 1;
+            border-top: 1px solid var(--border-color);
         }
 
-        .social-links { margin-bottom: 10px; }
-        .social-links a { margin: 0 15px; font-size: 1.1em; font-weight: 500; }
+        .social-links a { margin: 0 12px; }
 
-        /* 移动端适配 */
         @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            .projects-grid { grid-template-columns: 1fr; }
             .container { padding: 30px 20px; }
-            h1 { font-size: 1.8em; }
         }
-
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="loading.png" alt="Bailey Huang Avatar" class="avatar">
-            <h1>Bailey Huang <span style="font-size:0.7em;">✨</span></h1>
-            <p class="subtitle">Creator / Dreamer / Art Lover</p>
-            <p>你好呀！欢迎来到我的个人空间。<br>这里记录着我的代码、想法和所有美好的事物。 (˶‾᷄ ⁻ ‾᷅˵)</p>
+            <img src="loading.png" alt="Bailey Huang" class="avatar">
+            <div class="header-text">
+                <h1>Bailey Huang</h1>
+                <p class="subtitle">Automation Student / Tech Explorer</p>
+                <p style="margin: 10px 0 0 0; font-size: 0.95em;">保持好奇，保持热爱。在自动化与设计的边界探索更多可能。</p>
+            </div>
         </header>
 
+        <section id="education">
+            <h2>教育背景</h2>
+            <div class="edu-item">
+                <span class="edu-name">西安交通大学 · 自动化</span>
+                <span class="edu-date">2022 - 2026 (预计)</span>
+            </div>
+            <p style="margin: 5px 0; font-size: 0.9em; color: #666;">本科在读 · 专注控制理论、嵌入式开发与人机交互设计。</p>
+        </section>
+
         <section id="about">
-            <h2>关于我 ♡</h2>
-            <p>目前是西安交通大学自动化本科学生，未来我还不知道。</p>
-            <p>对一切保有好奇心~</p>
-            <p>通过邮箱可以找到我：<a href="mailto:baileyhstu@gmail.com">baileyhstu@gmail.com</a></p>
+            <h2>关于我</h2>
+            <p>你好！我是 Bailey。目前在西交大攻读自动化专业。我热衷于将严谨的工程逻辑与人性化的交互设计相结合。</p>
+            <p>在代码之外，我也热爱像素艺术和视觉排版，追求简约而不失温度的表达方式方式。</p>
+            <p>联系我：<a href="mailto:baileyhstu@gmail.com">baileyhstu@gmail.com</a></p>
         </section>
 
         <section id="projects">
-            <h2>我的项目 ♡</h2>
+            <h2>精选项目</h2>
             <div class="projects-grid">
                 <a href="https://github.com/BaileyH-17/BaileyH.github.io" class="project-card" target="_blank">
-                    <h3>Personal Website</h3>
-                    <p>这个精美的、带马卡龙粉主题的个人主页项目。基于 GitHub Pages 静态托管。</p>
+                    <h3>Personal Space</h3>
+                    <p>基于 GitHub Pages 构建的个人主页，展示设计审美与前端基础。</p>
                 </a>
                 <div class="project-card">
-                    <h3>Pixel Art Gallery</h3>
-                    <p>一个还在规划中的像素画展示平台，用来收集和展示可爱的艺术作品。</p>
+                    <h3>Coming Soon</h3>
+                    <p>更多自动化相关的实验项目与设计作品正在整理中...</p>
                 </div>
             </div>
         </section>
@@ -189,8 +181,8 @@
             <div class="social-links">
                 <a href="https://github.com/BaileyH-17" target="_blank">GitHub</a>
                 <a href="mailto:baileyhstu@gmail.com">Email</a>
-                </div>
-            <p>© 2026 Bailey Huang. Built with pure love & HTML/CSS.</p>
+            </div>
+            <p>© 2026 Bailey Huang · Built with Style & Intent</p>
         </footer>
     </div>
 </body>
