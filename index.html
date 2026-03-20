@@ -6,12 +6,12 @@
     <title>Bailey Huang | Personal Space</title>
     <style>
         :root {
-            --bg-color: #faf9f6; /* 更显高级的米白色 */
-            --text-color: #4a455a; /* 深灰紫色，更有阅读质感 */
-            --accent-color: #ffcad4; /* 降低饱和度的干枯玫瑰粉 */
+            --bg-color: #faf9f6; 
+            --text-color: #4a455a; 
+            --accent-color: #ffcad4; 
             --card-bg: #ffffff;
-            --border-color: #eee0e2; /* 极其纤细的边框色 */
-            --link-color: #9d8df1; /* 稍深一点的薰衣草紫 */
+            --border-color: #eee0e2; 
+            --link-color: #9d8df1; 
         }
 
         body {
@@ -26,7 +26,6 @@
             line-height: 1.7;
         }
 
-        /* 鼠标悬停爱心特效保留 */
         a { text-decoration: none; color: var(--link-color); transition: all 0.3s ease; position: relative; font-weight: 500; }
         a:hover { color: var(--accent-color); }
         a:after { content: ' ♡'; font-size: 0.9em; opacity: 0; transition: 0.3s; }
@@ -37,9 +36,9 @@
             max-width: 750px;
             padding: 60px 50px;
             background-color: var(--card-bg);
-            border-radius: 12px; /* 减小圆角，显得更干练 */
+            border-radius: 12px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.03); /* 极轻的投影 */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
             animation: fadeIn 0.8s ease-out;
         }
 
@@ -49,7 +48,7 @@
         }
 
         header {
-            text-align: left; /* 改为左对齐，更符合简历布局 */
+            text-align: left;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 40px;
             margin-bottom: 40px;
@@ -61,7 +60,7 @@
         .avatar {
             width: 100px;
             height: 100px;
-            border-radius: 15px; /* 改为圆角矩形，更具现代感 */
+            border-radius: 15px;
             border: 1px solid var(--border-color);
             object-fit: cover;
         }
@@ -77,7 +76,7 @@
             color: #2d2a3a;
             margin-bottom: 20px;
         }
-        h2::after { /* 装饰性横线 */
+        h2::after { 
             content: '';
             flex: 1;
             height: 1px;
@@ -96,12 +95,12 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr; /* 考虑到描述变长，改为单列或长卡片 */
             gap: 20px;
         }
 
         .project-card {
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             background: #fafafa;
@@ -115,8 +114,9 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .project-card h3 { margin: 0 0 10px 0; font-size: 1.1em; color: var(--text-color); }
-        .project-card p { font-size: 0.85em; margin: 0; color: #777; }
+        .project-card h3 { margin: 0 0 12px 0; font-size: 1.2em; color: #2d2a3a; display: flex; align-items: center; gap: 8px; }
+        .project-card p { font-size: 0.9em; margin: 0; color: #666; }
+        .tag { font-size: 0.7em; background: var(--accent-color); color: white; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }
 
         footer {
             text-align: center;
@@ -131,7 +131,6 @@
 
         @media (max-width: 600px) {
             header { flex-direction: column; text-align: center; }
-            .projects-grid { grid-template-columns: 1fr; }
             .container { padding: 30px 20px; }
         }
     </style>
@@ -142,38 +141,44 @@
             <img src="loading.png" alt="Bailey Huang" class="avatar">
             <div class="header-text">
                 <h1>Bailey Huang</h1>
-                <p class="subtitle">Automation Student / Tech Explorer</p>
-                <p style="margin: 10px 0 0 0; font-size: 0.95em;">保持好奇，保持热爱。在自动化与设计的边界探索更多可能。</p>
+                <p class="subtitle">Automation @ XJTU / AI Research Enthusiast</p>
+                <p style="margin: 10px 0 0 0; font-size: 0.95em;">在严谨的工程逻辑中，寻找 AI 与传统领域的交叉共鸣。</p>
             </div>
         </header>
 
         <section id="education">
             <h2>教育背景</h2>
             <div class="edu-item">
-                <span class="edu-name">西安交通大学 · 自动化</span>
+                <span class="edu-name">西安交通大学 · 自动化学院</span>
                 <span class="edu-date">2023 - 2027</span>
             </div>
-            <p style="margin: 5px 0; font-size: 0.9em; color: #666;">本科在读 · 专注控制理论、嵌入式开发与人机交互设计。</p>
-        </section>
-
-        <section id="about">
-            <h2>关于我</h2>
-            <p>你好！我是 Bailey。目前在西交大攻读自动化专业。</p>
-            <p>联系我：<a href="mailto:baileyhstu@gmail.com">baileyhstu@gmail.com</a></p>
+            <p style="margin: 5px 0; font-size: 0.9em; color: #666;">本科在读 · 主修控制工程、信号处理，并深入探索大语言模型及其优化算法。</p>
         </section>
 
         <section id="projects">
             <h2>精选项目</h2>
             <div class="projects-grid">
-                <a href="https://github.com/BaileyH-17/BaileyH.github.io" class="project-card" target="_blank">
-                    <h3>Personal Space</h3>
-                    <p>基于 GitHub Pages 构建的个人主页，展示设计审美与前端基础。</p>
-                </a>
                 <div class="project-card">
-                    <h3>Coming Soon</h3>
-                    <p>更多自动化相关的实验项目与设计作品正在整理中...</p>
+                    <h3>中医行业大模型 <span class="tag">LLM Fine-tuning</span></h3>
+                    <p>针对中医垂直领域进行指令微调。通过构建高质量的中医典籍与临床问答数据集，提升模型在中医辩证、方剂推荐及术语解释方面的准确性，旨在将传统医学智慧与现代自然语言处理技术相结合。</p>
                 </div>
+
+                <div class="project-card">
+                    <h3>TTO (Test-Time Optimization) 研究</h3>
+                    <p>探索大模型推理阶段的性能优化（Thought-to-Output）。研究重点在于如何通过推理时的动态计算与逻辑链验证，提升模型在复杂逻辑推理与专业领域问答中的可靠性与准确率。</p>
+                </div>
+
+                <a href="https://github.com/BaileyH-17/BaileyH.github.io" class="project-card" target="_blank">
+                    <h3>Personal Digital Space <span class="tag">Frontend</span></h3>
+                    <p>基于 GitHub Pages 的静态空间。在这个项目中，我平衡了 UI 的精致感与学术页面的严谨排版，用于记录技术思考与成长历程。</p>
+                </a>
             </div>
+        </section>
+
+        <section id="about">
+            <h2>联系方式</h2>
+            <p>如果您对我的研究方向感兴趣，或有任何合作机会，欢迎随时联系我：</p>
+            <p><a href="mailto:baileyhstu@gmail.com">baileyhstu@gmail.com</a></p>
         </section>
 
         <footer>
@@ -181,7 +186,7 @@
                 <a href="https://github.com/BaileyH-17" target="_blank">GitHub</a>
                 <a href="mailto:baileyhstu@gmail.com">Email</a>
             </div>
-            <p>© 2026 Bailey Huang · Built with Pure Love </p>
+            <p>© 2026 Bailey Huang · 保持好奇 · 持续加载</p>
         </footer>
     </div>
 </body>
