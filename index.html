@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bailey Huang | 个人主页</title>
+    <title>Bailey Huang ✨ | Home</title>
     <style>
-        /* 1. 基础样式定义 - 这里决定了整体的“黑金”基调 */
+        /* 1. 基础样式定义 - 这里决定了整体的“萌系”基调 */
         :root {
-            --bg-color: #0d1117; /* GitHub 暗黑风格背景 */
-            --text-color: #c9d1d9; /* 柔和的浅灰文字 */
-            --accent-color: #f1e05a; /* 精美的金色（来自 GitHub 的 JavaScript 语言色） */
-            --card-bg: #161b22; /* 卡片背景色 */
-            --border-color: #30363d; /* 细微的分隔线 */
+            --bg-color: #fdfaf5; /* 奶油白背景 */
+            --text-color: #7a6a96; /* 柔和紫文字（不那么刺眼） */
+            --accent-color: #ffb7c3; /* 马卡龙粉，用于强调 */
+            --card-bg: #fffefe; /* 纯白卡片 */
+            --border-color: #ffdadf; /* 极淡的粉色边框 */
+            --link-color: #b7a9f1; /* 柔和的紫罗兰链接 */
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-family: "SF Pro SC", "HanHei SC", SF Pro Text, Myriad Set Pro, system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -23,23 +24,40 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            line-height: 1.6;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
         }
 
-        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        a { text-decoration: none; color: var(--link-color); transition: all 0.2s; position: relative; }
         a:hover { color: var(--accent-color); }
+        a:after { content: ' ♡'; font-size: 0.8em; opacity: 0; transition: 0.2s; }
+        a:hover:after { opacity: 1; }
 
         /* 2. 主容器 */
         .container {
             width: 90%;
             max-width: 800px;
-            padding: 40px;
+            padding: 50px 40px;
             background-color: var(--card-bg);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(255,183,195,0.15); /* 淡淡的粉色投影 */
             /* 添加一个精美的淡入动画 */
             animation: fadeIn 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 增加一个可爱的背景圆点图案 */
+        .container:before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
         }
 
         @keyframes fadeIn {
@@ -50,9 +68,11 @@
         /* 3. 头部区域 */
         header {
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px dashed var(--border-color); /* 虚线更可爱 */
             padding-bottom: 30px;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
         }
 
         /* 你的头像 - 使用你 GitHub 的真实头像 */
@@ -60,51 +80,78 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 4px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(241, 224, 90, 0.3);
+            border: 5px solid white;
+            box-shadow: 0 0 0 5px var(--accent-color); /* 双层边框效果 */
             margin-bottom: 20px;
         }
 
-        h1 { margin: 0; font-size: 2.5em; color: white; }
-        .subtitle { color: var(--accent-color); font-size: 1.2em; font-weight: 300; margin-top: 5px; }
+        h1 { margin: 0; font-size: 2.2em; color: var(--text-color); }
+        .subtitle { color: var(--accent-color); font-size: 1.1em; font-weight: 500; margin-top: 5px; }
 
         /* 4. 内容区域 */
-        section { margin-bottom: 30px; }
-        h2 { border-left: 4px solid var(--accent-color); padding-left: 10px; color: white; margin-bottom: 15px; }
+        section { margin-bottom: 40px; position: relative; z-index: 1; }
+        h2 { 
+            display: inline-block;
+            border-bottom: 3px solid var(--accent-color); 
+            padding: 0 5px 2px 5px; 
+            color: var(--text-color); 
+            margin-bottom: 20px; 
+            border-radius: 3px;
+        }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
         .project-card {
-            background-color: rgba(255,255,255,0.03);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid transparent;
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid var(--border-color);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .project-card:hover {
-            border-color: var(--accent-color);
-            background-color: rgba(241, 224, 90, 0.05);
+            border-color: var(--link-color);
+            background-color: #f6f3ff; /* 淡淡的紫色背景 */
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(183,169,241,0.2);
         }
 
-        .project-card h3 { margin-top: 0; color: white; }
+        .project-card h3 { margin-top: 0; color: var(--text-color); font-size: 1.3em; }
+        .project-card p { font-size: 0.95em; margin-bottom: 0; }
+
+        /* 特殊的项目图标占位 */
+        .project-card:before {
+            content: '☁️'; /* 默认图标 */
+            font-size: 1.5em;
+            display: block;
+            margin-bottom: 10px;
+        }
 
         /* 5. 底部链接 */
         footer {
             text-align: center;
             font-size: 0.9em;
-            color: #8b949e;
-            margin-top: 50px;
-            border-top: 1px solid var(--border-color);
+            color: #b0a6c0;
+            margin-top: 60px;
+            border-top: 2px dashed var(--border-color);
             padding-top: 20px;
+            position: relative;
+            z-index: 1;
         }
 
-        .social-links a { margin: 0 10px; font-size: 1.2em; }
+        .social-links { margin-bottom: 10px; }
+        .social-links a { margin: 0 15px; font-size: 1.1em; font-weight: 500; }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.8em; }
+        }
 
     </style>
 </head>
@@ -112,27 +159,28 @@
     <div class="container">
         <header>
             <img src="https://avatars.githubusercontent.com/u/154784741?v=4" alt="Bailey Huang Avatar" class="avatar">
-            <h1>Bailey Huang</h1>
-            <p class="subtitle">开发者 / 设计爱好者 / 极简主义者</p>
-            <p>你好呀！欢迎来到我的个人主页。</p>
+            <h1>Bailey Huang <span style="font-size:0.7em;">✨</span></h1>
+            <p class="subtitle">Creator / Dreamer / Art Lover</p>
+            <p>你好呀！欢迎来到我的小小空间。<br>这里记录着我的代码、想法和所有美好的事物。 (˶‾᷄ ⁻ ‾᷅˵)</p>
         </header>
 
         <section id="about">
-            <h2>关于我</h2>
-            <p>目前居住在**中国广州**。我热爱编程，喜欢用代码将奇思妙想变为现实。专注于前端开发，但也对后端和开源技术充满好奇。</p>
-            <p>你可以通过邮箱联系我：<a href="mailto:baileyhstu@gmail.com">baileyhstu@gmail.com</a></p>
+            <h2>关于我 ♡</h2>
+            <p>目前居住在**中国广州**。我热爱编程，喜欢用代码将奇思妙想变为现实。</p>
+            <p>专注于前端开发，但也对后端和开源技术充满好奇。闲暇时喜欢涂鸦、听音乐，收集可爱的像素画。</p>
+            <p>通过邮箱可以找到我：<a href="mailto:baileyhstu@gmail.com">baileyhstu@gmail.com</a></p>
         </section>
 
         <section id="projects">
-            <h2>我的项目</h2>
+            <h2>我的项目 ♡</h2>
             <div class="projects-grid">
                 <a href="https://github.com/BaileyH-17/BaileyH.github.io" class="project-card" target="_blank">
                     <h3>Personal Website</h3>
-                    <p>这个精美的个人主页项目。基于 GitHub Pages 静态托管。</p>
+                    <p>这个精美的、带马卡龙粉主题的个人主页项目。基于 GitHub Pages 静态托管。</p>
                 </a>
                 <div class="project-card">
-                    <h3>Coming Soon...</h3>
-                    <p>更多精彩项目正在赶来的路上，敬请期待！</p>
+                    <h3>Pixel Art Gallery</h3>
+                    <p>一个还在规划中的像素画展示平台，用来收集和展示可爱的艺术作品。</p>
                 </div>
             </div>
         </section>
@@ -142,7 +190,7 @@
                 <a href="https://github.com/BaileyH-17" target="_blank">GitHub</a>
                 <a href="mailto:baileyhstu@gmail.com">Email</a>
                 </div>
-            <p>© 2026 Bailey Huang. Built with pure HTML/CSS.</p>
+            <p>© 2026 Bailey Huang. Built with pure love & HTML/CSS.</p>
         </footer>
     </div>
 </body>
