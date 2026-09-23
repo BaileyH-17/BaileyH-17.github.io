@@ -36,7 +36,7 @@
 
 ## 本地运行
 
-需要 Node.js 18.17+（推荐 Node.js 20+）：
+需要 Node.js 22.12+（当前 Astro 版本要求）：
 
 ```bash
 npm install
@@ -60,6 +60,6 @@ npm run preview
 https://baileyh-17.github.io/
 ```
 
-仓库已包含 `.github/workflows/deploy.yml`。将代码推送到 `main` 分支后，GitHub Actions 会自动执行 `npm ci`、`npm run build`，再将 `dist/` 发布到 GitHub Pages。
+仓库已包含 `.github/workflows/deploy.yml`。将代码推送到 `main` 分支后，GitHub Actions 会使用 Node.js 22 自动执行 `npm ci`、`npm run build`，再将 `dist/` 发布到 GitHub Pages。
 
 首次启用时，在 GitHub 仓库的 `Settings → Pages` 中将 `Build and deployment` 的来源设置为 `GitHub Actions`。之后每次推送到 `main` 都会自动更新主页。
