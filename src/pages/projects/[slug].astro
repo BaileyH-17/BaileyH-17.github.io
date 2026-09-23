@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/site';
+export function getStaticPaths() { return projects.map((project) => ({ params: { slug: project.slug }, props: { project } })); }
+const { project } = Astro.props;
+---
+<BaseLayout title={`${project.title} — Bailey Huang`} description={project.summary}><div class="container detail-page"><a class="back-link" href="/#projects">← 返回项目列表</a><header class="detail-header"><p class="kicker">{project.eyebrow}</p><h1>{project.title}</h1><div class="detail-meta"><time>{project.date}</time><div class="tag-list">{project.tags.map((tag) => <span>{tag}</span>)}</div></div></header><div class="detail-layout"><article class="detail-content"><p class="detail-lede">{project.summary}</p><h2>项目概述</h2><p>这是一个围绕真实工程问题展开的研究与开发项目。当前页面先以文字记录项目背景、技术路径和阶段性结果，后续可以继续扩展实验图表、系统架构、演示视频与代码仓库。</p><h2>主要工作</h2><ul>{project.bullets.map((bullet) => <li>{bullet}</li>)}</ul><h2>后续可补充</h2><p>实验对比、部署截图、关键代码片段、复现步骤和相关论文/专利链接。</p></article><aside class="detail-aside"><p class="section-label">Project note</p><p>页面路由：<code>/projects/{project.slug}/</code></p><p>内容来自 <code>src/data/site.ts</code>。</p></aside></div></div></BaseLayout>

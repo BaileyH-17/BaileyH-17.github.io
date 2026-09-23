@@ -1,0 +1,8 @@
+---
+import { profile } from '../data/site';
+import '../styles/global.css';
+const { title = `${profile.name} — ${profile.role}`, description = profile.description } = Astro.props;
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><meta name="description" content={description} /><meta name="theme-color" content="#0b1220" /><title>{title}</title></head><body>
+<header class="site-header"><div class="container header-inner"><a class="wordmark" href="/" aria-label="返回首页"><span class="wordmark-mark">BH</span><span>{profile.name}</span></a><nav aria-label="主导航"><a href="/#about">About</a><a href="/#experience">Experience</a><a href="/#projects">Projects</a><a href="/#contact">Contact</a></nav><span class="availability"><i></i> Technical builder</span></div></header>
+<main><slot /></main><footer class="site-footer container"><span>© 2026 {profile.name}</span><span>Designed for engineering work, built with Astro.</span></footer></body></html>
