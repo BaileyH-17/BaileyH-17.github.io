@@ -11,8 +11,13 @@
 @media(max-width:560px){.home{padding-block-start:25px}.hero h1{font-size:3.65rem}.hero-card h2{font-size:1.8rem}.signal-grid strong{font-size:1.18rem}.experience-feature{grid-template-columns:1fr;gap:10px}.experience-feature time{text-align:start}.profile-column{grid-template-columns:1fr}.profile-block:first-child{grid-column:auto}.detail-header{padding-block:45px 28px}.detail-header h1{font-size:clamp(1.85rem,9vw,2.8rem)}.detail-meta{display:block}.detail-meta .tag-list{margin-block-start:12px}.detail-layout{gap:28px}.detail-content p,.detail-content li{font-size:.8rem}.site-footer{display:block}.site-footer span{display:block;margin-block-start:6px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;animation:none}}
 
-@media(max-width:850px){.profile-cutout{inline-size:180px;opacity:.86}.gallery-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.profile-cutout{inline-size:142px;opacity:.78}.gallery-heading{align-items:start;flex-direction:column;gap:5px}.gallery-heading>p:last-child{font-size:.67rem}.project-gallery{margin-block-start:48px}.gallery-placeholder{aspect-ratio:3/2}}
+/* The portrait is a standalone hero object; no card or texture overlaps it. */
+.hero-aside{display:grid;place-items:center}
+.profile-cutout{inline-size:290px;aspect-ratio:3/4;justify-self:center;border-radius:48% 52% 45% 55% / 43% 46% 54% 57%;box-shadow:12px 12px 0 var(--pink-soft),0 18px 34px rgba(48,78,113,.12)}
+.profile-cutout::after{display:none}
+
+@media(max-width:850px){.profile-cutout{inline-size:240px;opacity:1}.gallery-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.profile-cutout{inline-size:210px;opacity:1}.gallery-heading{align-items:start;flex-direction:column;gap:5px}.gallery-heading>p:last-child{font-size:.67rem}.project-gallery{margin-block-start:48px}.gallery-placeholder{aspect-ratio:3/2}}
 
 /* Compact section headings keep the resume hierarchy quiet and readable. */
 .section-heading h2{font-size:clamp(1.45rem,2.5vw,2.05rem);line-height:1.08;letter-spacing:-.055em}
