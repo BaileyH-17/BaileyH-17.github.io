@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Bailey Huang', chineseName: '黄宝莹', role: 'Automation student · Edge AI',
   description: '西安交通大学自动化专业本科生，专注于端侧 AI 部署、模型推理优化与多模态智能系统。',
-  email: 'baileyhstu@gmail.com', phone: '15302209025', github: 'https://github.com/BaileyH-17'
+  email: 'baileyhstu@gmail.com', phone: '+86 15302209025', github: 'https://github.com/BaileyH-17'
 };
 export const skills = ['Python','C / C++','Linux','Astro','PyTorch','RKNN-Toolkit2','ONNX','vLLM','NPU','K3s','Hami','Volcano','CST Studio'];
 export type GalleryItem = { label: string; caption: string };
