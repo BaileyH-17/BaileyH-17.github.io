@@ -1,19 +1,20 @@
 ---
 import type { ProjectVideo as ProjectVideoData } from '../data/site';
 const { video } = Astro.props as { video: ProjectVideoData };
+const isEnglish = (Astro.props.lang ?? 'zh') === 'en';
 ---
 <section class="project-video" aria-labelledby="video-title">
   <div class="gallery-heading">
     <p class="section-label">Demo</p>
     <h2 id="video-title">{video.title}</h2>
-    <p>视频演示 · 点击播放</p>
+    <p>{isEnglish ? 'Video demo · Click to play' : '视频演示 · 点击播放'}</p>
   </div>
   <figure class="video-frame">
     <video controls preload="none" poster={video.poster} width="1280" height="720">
       <source src={video.webm} type="video/webm" />
       <source src={video.mp4} type="video/mp4" />
-      当前浏览器不支持视频播放，请使用下方 MP4 文件。
+      {isEnglish ? 'This browser does not support video playback. Please use the MP4 source.' : '当前浏览器不支持视频播放，请使用下方 MP4 文件。'}
     </video>
-    <figcaption>{video.caption}<small>此项内容原公司已公开，此处仅作展示。</small></figcaption>
+    <figcaption>{video.caption}<small>{isEnglish ? 'This material was publicly released by the company and is shown here for demonstration only.' : '此项内容原公司已公开，此处仅作展示。'}</small></figcaption>
   </figure>
 </section>

@@ -31,10 +31,12 @@ public/
 ## 页面路由
 
 - `/`：个人主页，包含技术定位、关键成果、实习经历和精选项目。
+- `/EN`：英文版个人主页，顶部提供 `中 | EN` 语言切换。
 - `/projects/edge-ai-deployment/`：端侧 AI 部署实习详情。
 - `/projects/remote-sensing-segmentation/`：遥感视频推理分割详情。
 - `/projects/tcm-llm/`：中医大模型算法开发详情。
 - `/projects/tto-microwave-source/`：高功率微波源设计详情。
+- `/EN/projects/<slug>/`：对应项目的英文详情页。
 
 项目详情页目前是普通文字结构，项目内容统一维护在 `src/data/site.ts`，后续可继续补充图片、架构图、代码、论文和演示视频。静态媒体统一放在 `public/media/` 下，构建后会以 `/media/...` 路径访问。
 
@@ -54,7 +56,7 @@ npm run build
 npm run preview
 ```
 
-修改个人信息或项目内容时，优先编辑 `src/data/site.ts`；修改全局视觉时编辑 `src/styles/global.css`。Astro 会在构建时为每个项目生成独立静态详情页。
+修改中文个人信息或项目内容时，优先编辑 `src/data/site.ts`；英文文案维护在 `src/data/site.en.ts`。修改全局视觉时编辑 `src/styles/global.css`。Astro 会在构建时为中文和英文项目分别生成独立静态详情页。
 
 ## 发布到 GitHub Pages
 

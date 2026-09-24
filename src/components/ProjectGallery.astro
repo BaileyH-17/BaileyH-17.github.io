@@ -1,9 +1,10 @@
 ---
 import type { Project } from '../data/site';
 const { project } = Astro.props as { project: Project };
+const isEnglish = (Astro.props.lang ?? 'zh') === 'en';
 ---
 <section class="project-gallery" aria-labelledby="gallery-title">
-  <div class="gallery-heading"><p class="section-label">Gallery</p><h2 id="gallery-title">项目图片</h2><p>图片待补充 · 悬浮查看说明</p></div>
+  <div class="gallery-heading"><p class="section-label">Gallery</p><h2 id="gallery-title">{isEnglish ? 'Project images' : '项目图片'}</h2><p>{isEnglish ? 'Images coming soon · Hover for notes' : '图片待补充 · 悬浮查看说明'}</p></div>
   <div class="gallery-grid">
     {project.gallery.map((item, index) => (
       <figure class:list={['gallery-card', `gallery-card-${index + 1}`]}>

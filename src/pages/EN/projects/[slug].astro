@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectGallery from '../../../components/ProjectGallery.astro';
+import ProjectVideo from '../../../components/ProjectVideo.astro';
+import { projects } from '../../../data/site.en';
+export function getStaticPaths() { return projects.map((project) => ({ params: { slug: project.slug }, props: { project } })); }
+const { project } = Astro.props;
+---
+<BaseLayout lang="en" title={`${project.title} — Bailey Huang`} description={project.summary}><div class="container detail-page"><a class="back-link" href="/EN#projects">← Back to projects</a><header class="detail-header"><p class="kicker">{project.eyebrow}</p><h1>{project.title}</h1><div class="detail-meta"><time>{project.date}</time><div class="tag-list">{project.tags.map((tag) => <span>{tag}</span>)}</div></div></header><article class="detail-content"><p class="detail-lede">{project.summary}</p>{project.detailSections ? <div class="detail-sections">{project.detailSections.map((section) => <section class="detail-section"><header><h2>{section.title}</h2></header>{section.summary && <p class="section-summary">{section.summary}</p>}<ul>{section.points.map((point) => <li>{point}</li>)}</ul></section>)}</div> : <><h2>Key work</h2><ul>{project.bullets.map((bullet) => <li>{bullet}</li>)}</ul></>}</article>{project.video && <ProjectVideo video={project.video} lang="en" />}<ProjectGallery project={project} lang="en" /></div></BaseLayout>
