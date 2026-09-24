@@ -19,8 +19,7 @@
 .detail-sections{display:grid;gap:0;margin-block-start:30px}
 .detail-section{padding-block:24px 25px;border-block-start:1px solid var(--line)}
 .detail-section:last-child{border-block-end:1px solid var(--line)}
-.detail-section header{display:flex;align-items:baseline;gap:15px}
-.detail-section .section-label{flex:none;margin:0;color:var(--pink-deep);font-size:.58rem}
+.detail-section header{display:flex;align-items:baseline}
 .detail-section h2{margin:0;color:var(--navy);font-size:1.04rem;line-height:1.35}
 .detail-section .section-summary{margin:10px 0 7px;color:var(--ink);font-size:.83rem}
 .detail-section ul{margin:0;padding-inline-start:17px}
@@ -29,7 +28,8 @@
 .project-video{margin-block-start:60px;padding-block-start:28px;border-block-start:1px solid var(--line)}
 .video-frame{margin:0}
 .video-frame video{display:block;inline-size:100%;block-size:auto;aspect-ratio:16/9;border:1px solid var(--line);border-radius:16px;background:var(--navy);box-shadow:var(--shadow)}
-.video-frame figcaption{margin-block-start:11px;color:var(--ink-soft);font-size:.74rem;text-wrap:pretty}
+.video-frame figcaption{display:grid;gap:3px;margin-block-start:11px;color:var(--ink-soft);font-size:.74rem;text-wrap:pretty}
+.video-frame figcaption small{color:#9aa3b1;font-size:.67rem}
 
 @media(max-width:850px){.profile-cutout{inline-size:240px;opacity:1}.gallery-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.profile-cutout{inline-size:210px;opacity:1}.gallery-heading{align-items:start;flex-direction:column;gap:5px}.gallery-heading>p:last-child{font-size:.67rem}.project-gallery{margin-block-start:48px}.gallery-placeholder{aspect-ratio:3/2}}

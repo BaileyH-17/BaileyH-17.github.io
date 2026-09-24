@@ -14,6 +14,6 @@ const { video } = Astro.props as { video: ProjectVideoData };
       <source src={video.mp4} type="video/mp4" />
       当前浏览器不支持视频播放，请使用下方 MP4 文件。
     </video>
-    <figcaption>{video.caption}</figcaption>
+    <figcaption>{video.caption}<small>此项内容原公司已公开，此处仅作展示。</small></figcaption>
   </figure>
 </section>
