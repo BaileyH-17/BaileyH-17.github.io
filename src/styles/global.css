@@ -16,6 +16,12 @@
 .profile-cutout{inline-size:290px;aspect-ratio:3/4;justify-self:center;border-radius:48% 52% 45% 55% / 43% 46% 54% 57%;box-shadow:12px 12px 0 var(--pink-soft),0 18px 34px rgba(48,78,113,.12)}
 .profile-cutout::after{display:none}
 
+.detail-sections{display:grid;gap:24px;margin-block-start:28px}
+.detail-section{padding:19px 20px 15px;border-inline-start:2px solid var(--pink);background:linear-gradient(90deg,var(--pink-soft),transparent 75%)}
+.detail-section h2{margin:0 0 8px;font-size:1rem}
+.detail-section p{margin:0 0 8px}
+.detail-section ul{margin-block-end:0}
+
 @media(max-width:850px){.profile-cutout{inline-size:240px;opacity:1}.gallery-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.profile-cutout{inline-size:210px;opacity:1}.gallery-heading{align-items:start;flex-direction:column;gap:5px}.gallery-heading>p:last-child{font-size:.67rem}.project-gallery{margin-block-start:48px}.gallery-placeholder{aspect-ratio:3/2}}
 
