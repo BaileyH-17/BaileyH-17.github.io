@@ -1,0 +1,15 @@
+---
+import type { Project } from '../data/site';
+const { project } = Astro.props as { project: Project };
+---
+<section class="project-gallery" aria-labelledby="gallery-title">
+  <div class="gallery-heading"><p class="section-label">Gallery</p><h2 id="gallery-title">项目图片</h2><p>图片待补充 · 悬浮查看说明</p></div>
+  <div class="gallery-grid">
+    {project.gallery.map((item, index) => (
+      <figure class:list={['gallery-card', `gallery-card-${index + 1}`]}>
+        <div class="gallery-placeholder" aria-hidden="true"><span>{String(index + 1).padStart(2, '0')}</span><i></i></div>
+        <figcaption><strong>{item.label}</strong><span>{item.caption}</span></figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
