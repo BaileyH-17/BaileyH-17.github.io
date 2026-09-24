@@ -22,6 +22,10 @@
     │       └── [slug].astro  # 项目详情动态路由
     └── styles/
         └── global.css        # 全站设计系统与响应式样式
+public/
+└── media/
+    ├── images/               # 头像、项目图片及后续图片素材
+    └── videos/               # 项目演示视频（WebM/MP4）
 ```
 
 ## 页面路由
@@ -32,7 +36,7 @@
 - `/projects/tcm-llm/`：中医大模型算法开发详情。
 - `/projects/tto-microwave-source/`：高功率微波源设计详情。
 
-项目详情页目前是普通文字结构，项目内容统一维护在 `src/data/site.ts`，后续可继续补充图片、架构图、代码、论文和演示视频。
+项目详情页目前是普通文字结构，项目内容统一维护在 `src/data/site.ts`，后续可继续补充图片、架构图、代码、论文和演示视频。静态媒体统一放在 `public/media/` 下，构建后会以 `/media/...` 路径访问。
 
 ## 本地运行
 

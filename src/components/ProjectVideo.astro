@@ -1,0 +1,19 @@
+---
+import type { ProjectVideo as ProjectVideoData } from '../data/site';
+const { video } = Astro.props as { video: ProjectVideoData };
+---
+<section class="project-video" aria-labelledby="video-title">
+  <div class="gallery-heading">
+    <p class="section-label">Demo</p>
+    <h2 id="video-title">{video.title}</h2>
+    <p>视频演示 · 点击播放</p>
+  </div>
+  <figure class="video-frame">
+    <video controls preload="none" poster={video.poster} width="1280" height="720">
+      <source src={video.webm} type="video/webm" />
+      <source src={video.mp4} type="video/mp4" />
+      当前浏览器不支持视频播放，请使用下方 MP4 文件。
+    </video>
+    <figcaption>{video.caption}</figcaption>
+  </figure>
+</section>
